@@ -28,7 +28,7 @@ public class Categoria {
 	@NotBlank (message = "O atributo tipo é obrigatório")
 	private String tipo;
 
-	@OneToMany(fetch = FetchType.LAZY, mappedBy = "categoria", cascade = CascadeType.REMOVE)
+	@OneToMany(fetch = FetchType.EAGER, mappedBy = "categoria", cascade = CascadeType.REMOVE)
 	@JsonIgnoreProperties("categoria")
 	private List<Produto> produtos;
 	
